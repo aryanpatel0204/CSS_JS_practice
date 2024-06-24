@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const promiseFiveAsync=new Promise(function(resolve, reject){
+            setTimeout(function(){
+                let error=true
+                if(!error){
+                    resolve({username: "JS", password: "JSnode"})
+                }else{
+                    reject("ERROR: JS went Wrong!!!")
+                }
+            },2000)
+        })
+        // Instead of using .then and .catch everytime we can use ASYNC and AWAIT
+        // async and await waits for the process to happen and then it will run.
+        //But using async and awaits there will be one problem to catch the error. But it is necessary used to use them while database connection.
+        async function PromiseAsync(){
+           try{
+            const MyAsyncRes= await promiseFiveAsync
+            console.log(MyAsyncRes);
+           }
+           catch(error){
+            console.log(error);
+           }
+           finally{
+            console.log("This Finally Runs!!");
+           }
+        }
+        PromiseAsync()
+/*
+Synchronous API Calls:
+- In synchronous calls, the program execution is blocked until the API call is complete.
+- The code will wait for the API response before moving on to the next line of code.
+- Traditional synchronous calls can potentially lead to a slower user experience, especially in web applications,
+  as the entire program halts until the API request is finished.
+- Synchronous calls are generally discouraged in web development because they can make your application unresponsive, 
+  especially in the context of browser-based JavaScript.
+
+Asynchronous API Calls:
+- In asynchronous calls, the program continues to run while the API call is being made, and the response is 
+  processed when it's ready.
+- This approach is more common in modern JavaScript and web development, as it allows for a more responsive user 
+  interface.
+- Asynchronous calls typically use callbacks, Promises, or the more recent async/await syntax.
+- Asynchronous calls are generally preferred in modern JavaScript development, especially in scenarios where 
+  responsiveness and user experience are crucial, such as web applications.
+*/
+        // CODE FOR FETCHING THE DATA
+        async function fetchMyData(){
+            try {
+                const myRes= await fetch('https://jsonplaceholder.typicode.com/users')
+                const data= await myRes.json();
+                console.log(data)
+            } catch (error) {
+                console.log("E: ",error);
+            }
+        }
+        fetchMyData()
+    </script>
+</body>
+</html>

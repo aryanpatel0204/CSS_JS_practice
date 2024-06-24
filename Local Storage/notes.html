@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Notes</title>
+</head>
+<body>
+    <form align="center">
+        <h1>Create/Write Your Notes Here.</h1>
+        <textarea name="notes" id="txtanotes" cols="30" rows="10"></textarea><br>
+        <button type="submit" class="btn btn-success">Click Here</button>
+    </form>
+
+    <script>
+        let form=document.querySelector("form");
+        form.addEventListener("submit",(event)=>{
+            let note=event.target.notes.value;
+            let date=new Date();
+            let notedata={note,date}
+
+            let notesData=JSON.parse(localStorage.getItem("myNotesData")) ?? []
+            notesData.push(notedata);
+
+            localStorage.setItem("myNotesData",JSON.stringify(notesData))
+
+            event.target.reset();
+            event.preventDefault();
+            window.location.href="notes_data.html";
+        })
+    </script>
+</body>
+</html>

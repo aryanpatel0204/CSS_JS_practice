@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>J Query</title>
+</head>
+<body>
+    <div class="mydiv">Hello Buddy</div>
+    <input type="button" id="mybtn" value="Click Me">
+</body>
+<script>
+    $(document).ready(function(){
+        $("#mybtn").click(function(){
+            let a=$('.mydiv').html();
+            alert(a)
+        })
+    })
+</script>
+</html>
+<!-- MAIN TO WRITE THIS BEFORE WRITING JQUERY
+    $(document).ready(function(){}). -->
+<!-- 1. Prepend: Prepending means adding an element to the beginning of a list, array, or string. When you prepend an element, it becomes the new first element, and all the existing elements are shifted one position to the right (if applicable).
+
+For example, if you have a list [2, 3, 4] and you prepend the element 1 to it, you get [1, 2, 3, 4].
+
+2. Append: Appending means adding an element to the end of a list, array, or string. When you append an element, it becomes the last element in the sequence, without disturbing the existing elements.
+
+Using the same example, if you have a list [1, 2, 3] and you append the element 4 to it, you get [1, 2, 3, 4]. -->

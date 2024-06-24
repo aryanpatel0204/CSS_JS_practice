@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form name="frm1" class="form-horizontal" method="post">
+            <div class="form-group">
+                <label for="email">Email address:</label>
+                <input type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd">
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select class="form-control" id="Gender">
+                    <option>Select</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Occupation">Occupation:</label>
+                <label class="radio-inline"><input type="radio" name="occupation" id="occupation" value="Business">
+                    Business</label>
+                <label class="radio-inline"><input type="radio" name="occupation" id="occupation" value="Job">
+                    Job</label>
+                <label class="radio-inline"><input type="radio" name="occupation" id="occupation" value="Student">
+                    Student</label>
+                <label class="radio-inline"><input type="radio" name="occupation" id="occupation" value="Other">
+                    Other</label>
+            </div>
+            <div class="form-group">
+                <label for="Hobbies">Hobbies:</label>
+                <label class="checkbox-inline"><input type="checkbox" name="hobbies" value="Singing"> Singing</label>
+                <label class="checkbox-inline"><input type="checkbox" name="hobbies" value="Dancing"> Dancing </label>
+                <label class="checkbox-inline"><input type="checkbox" name="hobbies" value="Skatting"> Skatting</label>
+                <label class="checkbox-inline"><input type="checkbox" name="hobbies" value="Chatting"> Chatting</label>
+            </div>
+            <input type="button" class="btn btn-default" id="btnAns" value="click me">
+            <div id="Selecteddisplay">
+            </div>
+        </form>
+</body>
+<script>
+    $(document).ready(function(){
+        $("#btnAns").click(function(){
+            // alert("Hi");
+            let str="";
+            let email=$('#email').val();
+            let pwd=$('#pwd').val();
+            let gender=$('#Gender').val();
+            let occupation=$("#occupation").val();
+
+            str="Email = "+email+"<br>";
+            str+="Password = "+pwd+"<br>";
+            str+="Gender = "+gender+"<br>";
+            str+="Occupation = "+occupation+"<br>";
+            
+            strHobbies="";
+            $('input:checkbox[name=hobbies]').each(function(){
+                if($(this).is(':checked')){
+                    strHobbies+=($(this).val())+" ";
+                }
+            });
+            str+="Hobbies = "+strHobbies;
+            $("#Selecteddisplay").html(str);
+        })
+    })
+</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="button" id="btnstart" value="START" onclick="start()">
+        <input type="button" id="btnstop" value="STOP">
+        <input type="button" id="btnreset" value="RESET"><br>        
+        <span id="spanans">00:00</span>
+
+    </form>
+    <script>
+        
+        let btn=document.querySelector("#btnstart");
+        let btn1=document.querySelector("#btnstop");
+        let btn2=document.querySelector("#btnreset");
+        sec=0;
+        min=0;
+
+        
+
+        function start(){
+            let d=new Date();
+            let m=d.getMinutes();
+            let s=d.getSeconds();
+            document.querySelector("#spanans").innerHTML=+m+":"+s
+        }
+        setInterval(start,1000)
+
+       
+    </script>
+</body>
+</html>

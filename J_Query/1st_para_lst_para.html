@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>1st Para and Last Para Tag Selecter</title>
+</head>
+<body>
+    <p>First Para</p>
+    <p>Second Para</p>
+    <p>Third Para</p>
+    <button>Click Me</button>
+</body>
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            $("p:first").css("border","2px solid green")
+            $("p:last").css("border","2px solid red")
+        })
+    })
+</script>
+</html>

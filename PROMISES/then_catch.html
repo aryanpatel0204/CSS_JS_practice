@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.then & .catch in promise</title>
+</head>
+<script>
+    // <!-- Syntax:
+    // let p=new Promise((resolve, reject)=>{}) -->
+    let p=new Promise((resolve, reject)=>{
+        console.log("Promise is pending!!")
+        setTimeout(()=>{
+            console.log("I am a promise and I am resolved")
+            resolve(true)
+            // reject(new Error("I am an error!.."))
+        },5000)
+    })
+    let p1=new Promise((resolve, reject)=>{
+        console.log("Promise is pending!!")
+        setTimeout(()=>{
+            // console.log("I am a promise and I am rejected")
+            // resolve(true)
+            reject(new Error("I am an error!.."))
+        },5000)
+    })
+    //to get the value.
+    p.then((value)=>{
+        console.log(value)
+    })
+    //to get the error
+    p1.catch((error)=>{
+        console.log("Some Error")
+    })
+</script>
+<body>
+    
+</body>
+</html>

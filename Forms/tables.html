@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <table style="border: 5px;" rules="all">
+            <tr>
+                <td><input type="text" id="txtnumber" placeholder="Enter Number of table you want"></td>
+                <td><input type="button" onclick="tables()" id="btnans" value="Answer"></td>
+            </tr>
+            <tr>
+                <td><span id="spananswer"></span></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function tables(){
+            let a=document.getElementById("txtnumber").value;
+            let str="";
+            for (i=1;i<=10;i++){
+                r=a*i;
+                str+=(a+" x "+i+"="+r+"\n");
+            }
+            document.getElementById("spananswer").innerText=str;
+        }
+    </script>
+</body>
+</html>

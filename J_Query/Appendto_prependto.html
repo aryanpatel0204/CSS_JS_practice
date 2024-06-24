@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendto Prependto</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <div id="box">
+
+    </div>
+    <input type="button" class="btn btn-default" id="btnAdd" value="AddNewItem">
+</body>
+<script>
+    $(document).ready(function(){
+        $('#btnAdd').click(function(){
+            $("<h1>This Is Appendto example</h1>").appendTo("#box");
+            $("<h1>This Is Prependto example</h1>").prependTo("#box");
+        })
+    })
+</script>
+</html>

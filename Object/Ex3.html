@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="spanans"></span>
+    <script>
+        span=document.querySelector("#spanans");
+        let data={
+            myname:{
+                fname:"ABX",
+                lname:"LLB"
+            },
+            myage:23,
+            city:"Ahmedabad",
+            contactno:4054710562,
+            "like birds":true,
+        };
+        let fname=data.myname.fname;
+        let lname=data.myname.lname;
+        let age=data.myage;
+        let birds=data["like birds"];
+
+        let merge=fname+"<br>"+lname+"<br>"+age+"<br>"+birds;
+        span.innerHTML=merge;
+
+        alert(birds)
+        let key=prompt("What Do You Want To Know About The User??",name)
+    </script>
+</body>
+</html>

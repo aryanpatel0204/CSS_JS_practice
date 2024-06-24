@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <span id="spanans"></span><br>
+    </form>
+    <script>
+        function canVote(age) {
+        return age >= 18;
+        }
+    
+        function func() {
+            let filtered = [24, 33, 16, 40].filter(canVote);
+            document.querySelector("#spanans").innerHTML=filtered;
+        }
+        func();
+    </script>
+</body>
+</html>

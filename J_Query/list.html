@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>CHANGE</title>
+</head>
+<body>
+    <ul>
+        <li>Ahmedabad</li>
+        <li>Surat</li>
+        <li>Baroda</li>
+        <li>Mumbai</li>
+        <li>Surat</li>
+        <li>Valsad</li>
+        <li>Pune</li>    
+    </ul>
+    <button>Click Me</button>
+</body>
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+        //    $("ul li:eq(2)").css("color",'red')
+            $("ul li:ge(3)").css("color","green");
+            $("ul li:le(3)").css("color","red");
+        //In the above code the index starts from 0 so the red color will be given to the element at number 3.
+        })
+    })
+</script>
+</html>
+<!-- QUESTION....
+->How can we write the text on the click event? -->

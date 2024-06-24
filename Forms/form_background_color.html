@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <table>
+            
+            <tr>
+                <td><input type="radio" value="Square" id="radred" name="op">RED</td>
+                <td><input type="radio" value="Square" id="radblue" name="op">BLUE</td>
+                <td><input type="radio" value="Square" id="radgreen" name="op">GREEN</td>
+            </tr>
+            <tr>
+                <td><input type="radio" value="Square" id="radwhite" name="op">WHITE</td>
+                <td><input type="radio" value="Square" id="radyell" name="op">YELLOW</td>
+                <td><input type="radio" value="Square" id="radvio" name="op">VIOLET</td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        let red=document.querySelector("#radred");
+        let blue=document.querySelector("#radblue");
+        let green=document.querySelector("#radgreen");
+
+        let white=document.querySelector("#radwhite");
+        let yellow=document.querySelector("#radyell");
+        let violet=document.querySelector("#radvio");
+
+        red.addEventListener("click",()=>{
+            document.bgColor="Red";
+        })
+        blue.addEventListener("click",()=>{
+            document.bgColor="Blue";
+        })
+        green.addEventListener("click",()=>{
+            document.bgColor="Green";
+        })
+
+        let b=document.write("Heyy Buddy")
+
+        white.addEventListener("click",()=>{
+            document.fgColor="white";
+        })
+        yellow.addEventListener("click",()=>{
+            document.fgColor="yellow";
+        })
+        violet.addEventListener("click",()=>{
+            document.fgColor="violet";
+        })
+
+    </script>
+</body>
+</html>

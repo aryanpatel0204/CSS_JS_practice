@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Divisibility Filter</title>
+</head>
+<body>
+
+  <form>
+    <span id="originalArray"></span><br>  
+    <input type="text" id="number">
+    <button id="filterBtn" type="button">Divisible</button> 
+    <span id="result"></span>
+  </form>
+  
+  <script>
+    let arr = [39, 24, 44, 28, 36, 29, 38, 37, 25, 34, 23, 30, 42, 22, 33, 43, 35, 40, 26, 32, 41, 27, 45, 31, 46, 48, 47, 49, 21, 50];
+
+    document.getElementById("originalArray").innerHTML = "Original Array: " + arr;
+
+    const filterArray = () => {
+      const num = document.getElementById("number").value; 
+      const divisible = arr.filter(n => n % num == 0);
+      document.getElementById("result").innerHTML = "Numbers Divisible by "+ num +": " + divisible;
+    }
+
+    document.getElementById("filterBtn").addEventListener("click", filterArray); 
+  </script>
+
+</body>
+</html>

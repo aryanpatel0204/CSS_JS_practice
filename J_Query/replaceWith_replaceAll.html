@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReplaceWith And ReplaceAll</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div id="box">
+        <p>Heyyy Kya Bolti Public!!!!</p>
+        <p>Kuch Nai Bolti Public!!!!!</p>
+        <button id="clickUs">Click Me</button>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $("#clickUs").click(function(){
+            // $("#box p:first").replaceWith("<h3>WWOWOWOWOWOWOHHOOO</h3>")
+            $("#box").replaceAll("<h3>WWOWOWOWOWOWOHHOOO</h3>")
+        })
+    })
+</script>
+</html>
+<!-- Difference is ReplaceWith can replace text or tag​.
+ReplaceAll only for Tags -->

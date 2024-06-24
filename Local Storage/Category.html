@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table width="100%" border="1" rules="all">
+        
+        <tbody>
+            <tr>
+
+            </tr>
+        </tbody>
+    </table> 
+    <script>
+        let tbody=document.querySelector("table tbody tr")
+        let categoryData=()=>{
+            let catData=JSON.parse(localStorage.getItem("catuserrdata")) ?? []
+            let rows="";
+            catData.forEach((v,i)=>{
+                rows+=`
+                        <td><b><a href="product.html?id=${i+1}">${v.name}</a></b><br><img src=${v.image} height='150px' width='120px'></td> 
+                `
+            })
+            tbody.innerHTML=rows
+        }
+        categoryData()
+    </script>   
+</body>
+</html>

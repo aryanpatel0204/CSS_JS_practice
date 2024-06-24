@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up Form</title>
+</head>
+<body>
+    <form id="formdata" style="border: black; border-width: 2px;" align="center">
+        <h1>Sign-Up</h1>
+        <label><b>Username:</b></label><br>
+        <input type="text" placeholder="Enter Name.." name="name" id="txtName"><br>
+        <label><b>Date Of Birth:</b></label><br>
+        <input type="date" name="dob" id="txtdob" placeholder="Enter Date Of Birth.."><br>
+        <label><b>Email:</b></label><br>
+        <input type="text" name="email" id="txtemail" placeholder="Enter Email.."><br>
+        <label><b>Password:</b></label><br>
+        <input type="password" id="txtpass" placeholder="Enter Password.."><br>
+        <label><b>Confirm Password:</b></label><br>
+        <input type="password" id="txtcpass" placeholder="Enter Confirm Password.."><br>
+        <span id="spanans1" style="color: red;"></span><br>
+        <label><b>Gender:</b></label><br>
+        Male:<input type="radio" name="gender" id="radMale" value="Male">
+        Female:<input type="radio" name="gender" id="radFemale" value="Female"><br>
+        <input type="button" id="btnclick" value="Sign-Up"><br>
+    </form>
+<h1>Data:</h1>
+<span id="spanans"></span>
+<script>
+    txt=document.querySelector("#txtName");
+    txt1=document.querySelector("#txtdob");
+    txt2=document.querySelector("#txtemail");
+    radmale=document.querySelector("#radMale");
+    radfemale=document.querySelector("#radFemale");
+    txtpass=document.querySelector("#txtpass");
+    txtcpass=document.querySelector("#txtcpass");
+    btn=document.querySelector("#btnclick");
+    span=document.querySelector("#spanans");
+    span1=document.querySelector("#spanans1");
+
+    arr=[];
+    
+    function checkPass(){
+        pass1=""
+        if(txtpass.value!=txtcpass.value){
+            span1.innerHTML="Please Check The Password And Confirm Password!!";
+            event.preventDefault();
+        }
+        else{
+            pass1=txtpass.value;
+        }
+    }
+    function checkradio(){
+        rad="";
+        if(radmale.checked==true){
+            rad+="male"
+        }
+        else if(radfemale.checked==true){
+            rad+="female"
+        }
+    }
+    btn.addEventListener("click",(e)=>{
+        checkPass();
+        checkradio();
+        txtname=txt.value;
+        txtdob=txt1.value;
+        txtemail=txt2.value;
+        radmale=radmale;
+        radfemale=radfemale ;
+        pass=txtpass.value;
+        cpass=txtcpass.value;        
+
+        
+        output="<table border=2px rules=all id=tabledata> <tr><td><b>Name</b></td><td><b>Date-Of-Birth</b></td><td><b>Email</b></td><td><b>Gender<b></td><td><b>Password</b></td></tr>"
+        
+        let obj={
+            name:txtname,
+            dob:txtdob,
+            email:txtemail,
+            gender:rad,
+            password:pass1
+        };
+
+        arr.push(obj);
+
+        for(i=0;i<arr.length;i++){
+            output+="<tr><td>"+arr[i].name+"</td>"+"<td>"+arr[i].dob+"</td>"+"<td>"+arr[i].email+"</td>"+"<td>"+arr[i].gender+"</td>"+"<td>"+arr[i].password+"</td>"+"<td><a href=# id=tdrow onclick=deleteData("+i+")>Delete</a></td><td><a href=# id=tdedit onclick=edit("+i+")>Edit</a></td></tr>";
+        }
+        span.innerHTML=output+"</table>";
+        txt.value="";
+        txt1.value="";
+        txt2.value="";
+        txtpass.value="";
+        txtcpass.value="";
+        radmale.checked=false;
+        radfemale.checked=false;
+    });
+
+    function deleteData(index){
+        arr.splice(index,1);
+        updateTable();
+    }
+    function edit(index){
+        let editName=prompt("Enter Name..");
+        let editDOB=prompt("Enter Date-Of-Birth..");
+        let editEmail=prompt("Enter New Email..");
+        let editPass=prompt("Enter New Password..");
+
+        arr[index].name=editName;
+        arr[index].dob=editDOB;
+        arr[index].email=editEmail;
+        arr[index].password=editPass;
+        updateTable()
+    }
+
+    function updateTable(){
+        let table=document.querySelector("#tabledata");
+        table.innerHTML="<tr><td><b>Name</b></td><td><b>Date-Of-Birth</b></td><td><b>Email</b></td><td><b>Gender<b></td><td><b>Password</b></td></tr>";
+        for(i=0;i<arr.length;i++){
+            table.innerHTML+="<tr><td>"+arr[i].name+"</td>"+"<td>"+arr[i].dob+"</td>"+"<td>"+arr[i].email+"</td>"+"<td>"+arr[i].gender+"</td>"+"<td onblur="+checkPass(event)+">"+arr[i].password+"</td>"+"<td><a href=# id=tdrow onclick=deleteData("+i+")>Delete</a></td><td><a href=# id=tdedit onclick=edit("+i+")>Edit</a></td></tr>";
+        }
+    }
+</script>
+</body>
+</html>

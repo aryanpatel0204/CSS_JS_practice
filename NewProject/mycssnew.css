@@ -1,0 +1,22 @@
+*{
+    margin:0px;
+    padding:0px;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+.container{
+    width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+  }
+  .pitems
+  {
+    flex-basis: 23%;
+    margin: 1%;
+    box-shadow: 0px 0px 10px 2px #ccc;
+  }
+  .pitems img{
+    height: 100%;
+    width: 100%;
+  }

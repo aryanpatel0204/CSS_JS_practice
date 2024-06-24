@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td><input type="text" id="txtstr" placeholder="Enter String."></td>
+                <!--<td><input type="text" id="txtpos" placeholder="Enter Position Of The String."></td>-->
+            </tr>
+            <tr>
+                <td><input type="button" value="Click Me" id="btnans"></td>
+            </tr>
+            <tr>
+                <td><span id="spanans"></span></td>
+            </tr>
+            <tr>
+                <td><span id="spanans1"></span></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+
+        btn=document.querySelector("#btnans");
+        
+
+        btn.addEventListener("click",()=>{
+            let a=document.querySelector("#txtstr").value;
+            let lower="";
+            let upper="";
+            for (i=0;i<a.length;i++){
+                let ch=a.charAt(i);
+                if(ch.toUpperCase()==ch){
+                    upper+=ch.toLowerCase();
+                }
+                else if(ch.toLowerCase()==ch){
+                    lower+=ch.toUpperCase();
+                }
+                document.querySelector("#spanans").innerHTML="Converted String Is= "+upper+lower;
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopingKart</title>
+</head>
+<body>
+    <table width="50%" border="1" rules="all" align="center">
+        <thead>
+            <tr>
+                <th>Product Id</th>
+                <th>Product Quantity</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Product Image</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const id=urlParams.get('id');
+        let tbody=document.querySelector("table tbody");
+        let totalPrice=0
+        let TempKart=()=>{
+            let CartData=JSON.parse(localStorage.getItem("TempCart")) ?? []
+            let row="";
+            CartData.forEach((cartItem)=>{
+                row+=`
+                    <tr>
+                        <td>${cartItem.d}</td>
+                        <td>${cartItem.quant}</td>
+                `
+                prodata=JSON.parse(localStorage.getItem("prouserdata")) ?? []
+                prodata.forEach((v,i)=>{
+                    if(cartItem.d==i+1){
+                        totalPrice+=parseInt(v.price);
+                        row+=`
+                                    <td>${v.name}</td>
+                                    <td>${v.price}</td>
+                                    <td><img src="${v.image}" heigth="100px" width="50px"></td>
+                                </tr>
+                            `
+                    }
+                })
+            })
+            row += `<tr><td colspan="4">Total Price:</td><td>${totalPrice}</td></tr>`;
+            tbody.innerHTML=row;
+        }
+        TempKart()
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td><input type="text" id="txt1"></td>
+            </tr>
+            <tr>
+                <td>Square:<input type="radio" value="Cube" id="radsqrt"></td>
+                <td>Cube:<input type="radio" value="Square" id="radcube"></td>
+            </tr>
+            <tr>
+                <td><span id="spanans"></span></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+
+    sqrt=document.querySelector("#radsqrt");
+    cube=document.querySelector("#radcube");
+    txtno=document.querySelector("#txt1");
+    span=document.querySelector("#spanans")
+
+    sqrt.addEventListener("click",()=>{
+        let a=parseInt(txtno.value);
+        span.innerHTML="Square Of "+a+" Is= "+a*a;
+    })
+    cube.addEventListener("click",()=>{
+        let a=parseInt(txtno.value);
+        span.innerHTML="Cube Of "+a+" Is= "+a*a*a;
+    })
+    </script>
+</body>
+</html>

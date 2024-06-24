@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <span id="spanans1"></span><br>
+        <input type="button" id="btn" value="POP">
+        
+        <input type="button" id="btn1" value="UNSHIFT"><br>
+        <span id="spanans"></span>
+    </form>
+    <script>
+        let a=['orange','apple','grapes'];
+        let btn=document.querySelector("#btn");
+        let btn1=document.querySelector("#btn1");
+        document.querySelector("#spanans1").innerHTML="Before Push & Shift Operation: "+a;
+        
+        btn.addEventListener("click",()=>{
+            a.pop("banana")
+            document.querySelector("#spanans").innerHTML="After Push Operation: "+a;
+        })
+        btn1.addEventListener("click",()=>{
+            a.unshift("apple")
+            document.querySelector("#spanans").innerHTML="After Shift Operation: "+a;
+        })
+
+    </script>
+</body>
+</html>
+
+<!--
+    POP:- Removes the last element from an array and returns that element. This method changes the length of the array.
+    UNSHIFT:- Adds one or more elements to the beginning of an array and returns the new length of the array.
+-->

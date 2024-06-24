@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <span id="spanans"></span><br>
+        <span id="spanans1"></span><br>
+        <span id="spanans2"></span>
+
+    </form>
+    <script>
+        let d=new Date();
+        let h=d.getHours();
+        let m=d.getMinutes();
+        let s=d.getSeconds();
+        let dd=d.getDay();
+        let mm=d.getMonth();
+        let yy=d.getFullYear()
+        if(h<12){
+            document.body.style.backgroundImage="url('morning.jpg')"
+        }
+        if(h>=12){
+            document.body.style.backgroundImage="url('afternoon.jpeg')"
+        }
+        if(h>=17){
+            document.querySelector("#spanans").innerHTML="Good Evening Time Is: "+h+":"+m+":"+s;
+        }
+        if(h>=22){
+            document.body.style.backgroundImage="url('night.jpg')"
+        }
+
+    </script>
+</body>
+</html>

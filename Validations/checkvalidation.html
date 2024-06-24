@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="frmnew">
+        <table>
+            <tr>
+                <td><input type="text" id="txtstr" placeholder="Enter Name."></td>
+                <td><span id="spanans" style="color: red; font-size: large;"></span></td>
+                <!--<td><input type="text" id="txtpos" placeholder="Enter Position Of The String."></td>-->
+            </tr>
+            <tr>
+                <td><input type="password" id="txtpass" placeholder="Enter Password."></td>
+                <td><span id="spanans1" style="color: red; font-size: large;"></span></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="Click Me" id="btnans"></td>
+            </tr>
+            <tr>
+            </tr>
+        </table>
+    </form>
+    <script>
+        let btn=document.querySelector("#btnans");
+        btn.addEventListener("click",()=>{
+            let a=document.querySelector("#txtstr").value;
+            let b=document.querySelector("#txtpass").value;
+            
+            if(a == ""){
+                document.querySelector("#spanans").innerHTML="•";
+            }
+            else{
+                document.querySelector("#spanans").innerHTML="";
+            }
+            if(b == ""){
+                document.querySelector("#spanans1").innerHTML="•";
+            }
+            else{
+                document.querySelector("#spanans1").innerHTML="";
+            }
+        })
+    </script>
+</body>
+</html>

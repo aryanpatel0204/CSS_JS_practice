@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Leave And Mouse Enter</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div id="box">
+        <h1>Text Box</h1>
+        <p>Heyyy Buddy!!!@</p>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $("#box").mouseleave(function(){
+            $("#box").css("background-color","red");
+        });
+        $("box").mouseenter(function(){
+            $("#box").css("background-color","blue");
+        })
+    })
+</script>
+</html>

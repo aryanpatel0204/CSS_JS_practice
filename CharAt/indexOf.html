@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <table>
+            <input type="text" id="txtstr" placeholder="Enter String."><br>
+            <input type="button" value="Click Me" id="btnans"><br>
+            <span id="spanans"></span>
+        </table>
+    </form>
+    <script>
+        span=document.querySelector("#spanans")
+        txt=document.querySelector("#txtstr");
+        let dotis=false;
+        txt.addEventListener("keydown",function(event){
+            t=txt.value;
+            let dot=t.indexOf(".");
+            
+            let key=event.key;
+            
+            if(key=="." && dotis){
+                event.preventDefault();
+            }
+            else if(key=="."){
+                dotis=true;
+            }
+        })
+    </script>
+</body>
+</html>

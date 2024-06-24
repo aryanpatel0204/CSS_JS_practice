@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double/Click Event</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div id="box">
+        <h1>Text Box</h1>
+        <p>Heyyy Buddy!!!@</p>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $("#box").dblclick(function(){
+            $("#box").css("background-color","black")
+        })
+        $("#box").click(function(){
+            $("#box").css("color","white")
+        })
+        $("#box").contextmenu(function(){
+            $("#box").css("background-color","blue")
+        })
+    })
+</script>
+</html>

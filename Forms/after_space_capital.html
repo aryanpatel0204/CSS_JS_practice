@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td><textarea name="name" id="txtarea1" cols="30" rows="10"></textarea></td>
+                
+            </tr>
+            <tr>
+                <td><input type="button" value="Click Me" id="btnans"></td>
+            </tr>
+            <tr>
+                <td><span id="spanans"></span></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+    btn=document.querySelector("#btnans");
+        
+
+    btn.addEventListener("click",()=>{
+        let a=document.querySelector("#txtarea1").value;
+        let x=0;
+        str="";
+    
+        for(let i=0 ; i<a.length ; i++){
+            char=a[i];
+            if(char==' '){
+                x=1;
+                str+=char;
+            }
+            else{
+                if(x==1){
+                    str+=char.toUpperCase();
+                }
+                else{
+                    str+=char;
+                }
+                x=0;
+            }
+            document.querySelector("#spanans").innerHTML=str;
+        }  
+    })
+    // document.querySelector("#spanans").innerHTML=a;
+    </script>
+</body>
+</html>

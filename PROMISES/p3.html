@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body
+    {
+        height: 90vh;
+        place-items: center;
+        display: grid;
+        background:redial-gradient(blue,black);
+        
+    }
+    .card
+    {
+        width: 60%;
+        height: 85vh;
+        background: radial-gradient(blue,black);
+        display: grid;
+        place-items: center;
+        border-radius: 2rem;
+    }
+    .box
+    {
+        width: 60%;
+        height: 85vh;
+        display: grid;
+        place-items: center;
+    }
+    .image
+    {
+        width:65%;
+        height: 65%;
+        border-radius: 1.5rem;
+        border:1px solid wheat;
+        background-repeat: no-repeat;
+        object-fit: cover;
+    }
+</style>
+<script>
+    function rk()
+    {
+        let api= 'https://source.unsplash.com/random/300x200?sig=${math.random()}'
+        fetch(api).then(res=>{
+            return res
+        }).then(data=>{
+            display_image(data.url)
+        }).catch(e=>console.log("erroe"));
+    }
+    function display_image(image)
+    {
+        document.getElementById("image").src=image
+    }
+</script>
+<body>
+    <div class="card">
+        <div class="box">
+            <image id="image"></image>
+        </div>
+        <div class="btn">
+            <button id="button" onclick="rk()">click</button>
+        </div>
+    </div>
+</body>
+</html>

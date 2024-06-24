@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td><label>Background Color Options:</label>
+                    <select name="maths" id="drop1">
+                        <option>-----For Background Color---</option>
+                        <option value="red">Red</option>
+                        <option value="orange">Orange</option>
+                        <option value="green">Green</option>
+                        <option value="purple">Purple</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Font Color Options:</label>
+                    <select name="maths" id="drop2">
+                        <option>-----For Font Color---</option>
+                        <option value="blue">Blue</option>
+                        <option value="brown">Brown</option>
+                        <option value="chartreuse">Chartreuse</option>
+                    </select>
+                </td>
+            </tr>
+            <!--<tr>
+                <td><input type="button" id="btnans" value="Submit Here"></td>
+            </tr>-->
+            <tr>
+                <td><span id="spanans"></span></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+ 
+    drp1=document.querySelector("#drop1");
+    drp2=document.querySelector("#drop2");
+
+    drp1.addEventListener("click",()=>{
+        d=drp1.value
+        if(d=="red"){
+            document.bgColor="red";
+        }
+        if(d=="orange"){
+            document.bgColor="orange";
+        }
+        if(d=="green"){
+            document.bgColor="green";
+        }
+        if(d=="purple"){
+            document.bgColor="purple";
+        }
+
+    })
+    drp2.addEventListener("click",()=>{
+        d=drp2.value
+        if(d=="blue"){
+            document.fgColor="blue";
+        }
+        if(d=="brown"){
+            document.fgColor="brown";
+        }
+        if(d=="chartreuse"){
+            document.fgColor="chartreuse";
+        }
+    
+    })
+    
+    
+    </script>
+</body>
+</html>

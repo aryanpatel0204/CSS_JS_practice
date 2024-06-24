@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td><label>Maths Options:</label>
+                    <select name="maths" id="drop1">
+                        <option>-----Select---</option>
+                        <option value="addition">Addition</option>
+                        <option value="subtraction">Subtraction</option>
+                        <option value="multiplication">Multiplication</option>
+                        <option value="division">Division</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="text" id="txtselect"></td>
+            </tr>
+            <tr>
+                <td><span id="spanans"></span></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+ 
+    
+    txt1=document.querySelector("#txtselect");
+    span=document.querySelector("#spanans");
+    drp=document.querySelector("#drop1");
+    //btn=document.querySelector("#btnans");
+
+    drp.addEventListener("change",()=>{
+        let pos=drp.selectedIndex;
+        var select=drp.options[pos].text
+
+        span.innerHTML=pos;
+        txt1.value=select;
+
+    })
+    
+    </script>
+</body>
+</html>

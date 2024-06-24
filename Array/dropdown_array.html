@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <span id="spanans1"></span><br>
+        <select id="cities">
+            <option>Select Cities</option>
+        </select>        
+        <input type="button" id="btnans" value="Click To Add">
+    </form>
+    <script>
+        let city=["ahmedabad","surat","rajkot","jamnagar","goa","udaipur",""];
+        document.querySelector("#spanans1").innerHTML="Original array: "+city;
+        let btn=document.querySelector("#btnans");
+        let drp=document.querySelector("#cities");
+
+       
+        
+        
+        btn.addEventListener("click",()=>{
+            city.forEach(c=>{
+                let opt=document.createElement('option');
+                opt.text=c;
+                drp.add(opt);
+            })
+            
+        })
+            
+        //})
+    </script>
+</body>
+</html>

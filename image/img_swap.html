@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!--;-->
+
+
+<body>
+    
+    <img src="merc.jpg" id="img1" height="250px" width="300px">
+    <img src="images.png" id="img2" height="250px" width="300px"><br>
+    <input type="button" id="btn1" value="Click 1">
+
+    <script>
+        img1=document.querySelector("#img1");
+        img2=document.querySelector("#img2");
+        btn=document.querySelector("#btn1");
+        btn.addEventListener("click",()=>{
+            let temp=img1.src;
+            img1.src=img2.src;
+            img2.src=temp;
+            //document.images[0].src="kola.jpg";
+            //document.images[1].src="wagon.jpg";
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="txtprincipal" placeholder="Enter Principal Amount"><br>
+        <input type="text" id="txtrate" placeholder="Enter Interest Rate"><br>
+        <input type="text" id="txttime" placeholder="Enter Given Time"><br>
+        <input type="button" onclick="si()" id="btnans" value="Generate Answer"><br>
+        <input type="text" id="txtans" placeholder="Answer Here....">
+    </form>
+    <script>
+        function si(){
+            let p=document.getElementById("txtprincipal").value;
+            let r=document.getElementById("txtrate").value;
+            let t=document.getElementById("txttime").value;
+            document.getElementById("txtans").value= "Simple Interest= "+(p*r*t)/100
+        }
+    </script>
+</body>
+</html>

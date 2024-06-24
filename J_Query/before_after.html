@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Append Prepend</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <ul>
+            <li>USA</li>
+            <li>Canada</li>
+        </ul> 
+        <input type="button" class="btn btn-default" id="btnAdd" value="AddNewItem">
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $("#btnAdd").click(function(){
+            $("ul").before("<li>Before Item</li>")
+            $("ul").after("<li>After Item</li>")
+        })
+    })
+</script>
+</html>

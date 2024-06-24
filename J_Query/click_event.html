@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>Click Event</title>
+</head>
+<body>
+    <div id="MyDiv1">
+        <h1>Hey Buddies!!</h1>
+    </div>
+    <div id="MyDiv2">
+        <h1></h1>
+    </div>
+    <button id="btn2">Clicke Me</button>
+</body>
+<script>
+    $(document).ready(function(){
+        $("#btn2").click(function(){
+            let a=($("#MyDiv1").html());
+            // alert(a);
+            $("h1").html('hey brother');
+        })
+    })
+</script>
+</html>

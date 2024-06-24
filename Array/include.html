@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="txtarray" placeholder="Enter Value For Array..."><br>
+        <input type="button" id="btnans" value="Click Me"><br>
+        <span id="spanans"></span>
+    </form>
+    <script>
+        
+        
+        let btn=document.querySelector("#btnans");
+        const a=[];
+        btn.addEventListener("click",()=>{
+            
+            let b=document.querySelector("#txtarray").value;
+            let s=document.querySelector("#spanans");
+
+            if(a.includes(b)==false){
+                a.push(b)
+            }
+            else{
+                alert("Already Their!!!");
+            }
+            
+            s.innerHTML=a;
+        })
+    </script>
+</body>
+</html>

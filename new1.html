@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Using var
+        function exampleVar() {
+            if (true) {
+                var x = 5;
+            }
+            document.write(x); // Outputs 5, var is function-scoped
+        }
+
+        // Using let
+        function exampleLet() {
+            if (true) {
+                let y = 10;
+            }
+            document.write(y);// ReferenceError: y is not defined, let is block-scoped
+        }
+
+        // Using const
+        function exampleConst() {
+            const z = 15;
+            z = 20; // Error: Assignment to constant variable
+        }
+
+        exampleConst()
+    </script>
+</body>
+</html>

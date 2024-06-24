@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td><input type="text" id="txt1" placeholder="Enter Number 1"></td>
+                <td><input type="text" id="txt2" placeholder="Enter Number 2"></td>
+            </tr>
+            <tr>
+                <td><input type="radio" value="Square" id="radadd" name="op">Addition</td>
+                <td><input type="radio" value="Square" id="radsub" name="op">Subtraction</td>
+                <td><input type="radio" value="Square" id="radmul" name="op">Multiplication</td>
+                <td><input type="radio" value="Square" id="raddiv" name="op">Division</td>
+
+            </tr>
+            <tr>
+                <td><input type="button" id="btnans" value="Click Me"></td>
+            </tr>
+            <tr>
+                <td><span id="spanans"></span></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+ 
+    
+    
+    txt1=document.querySelector("#txt1");
+    txt2=document.querySelector("#txt2");
+    span=document.querySelector("#spanans");
+    btn=document.querySelector("#btnans");
+
+    btn.addEventListener("click",()=>{
+        let a=parseFloat(txt1.value);
+        let b=parseFloat(txt2.value);
+        let add=document.querySelector("#radadd").checked;
+        let sub=document.querySelector("#radsub").checked;
+        let mul=document.querySelector("#radmul").checked;
+        let div=document.querySelector("#raddiv").checked;
+
+        if(add==true){
+            span.innerHTML="Addition Of "+a+" And "+b+" Is= "+(a+b);
+        }
+        else if(sub==true){
+            span.innerHTML="Subtraction Of "+a+" And "+b+" Is= "+(a-b);
+        }
+        else if(mul==true){
+            span.innerHTML="Multiplication Of "+a+" And "+b+" Is= "+(a*b);
+        }
+        else if(div==true){
+            span.innerHTML="Division Of "+a+" And "+b+" Is= "+(a/b);
+        }
+        
+
+    })
+    
+    
+    </script>
+</body>
+</html>

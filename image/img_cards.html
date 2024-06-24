@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!--;-->
+
+
+<body>
+    
+    <img src="card1.png" id="imgcard1" height="250px" width="200px">
+    <img src="card2.png" id="imgcard2" height="250px" width="200px">
+    <img src="card3.png" id="imgcard3" height="250px" width="200px">
+    <img src="card4.png" id="imgcard4" height="250px" width="200px"><br>
+    <span id="spanans"></span>
+    <script>
+        img1=document.querySelector("#imgcard1");
+        img2=document.querySelector("#imgcard2");
+        img3=document.querySelector("#imgcard3");
+        img4=document.querySelector("#imgcard4");
+        span=document.querySelector("#spanans");
+        //document.images[0].src="kola.jpg";
+        img1.addEventListener("click",()=>{
+            document.images[0].src="7clubs.png";
+        });
+        img2.addEventListener("click",()=>{
+            document.images[1].src="king.png";
+        });
+        img3.addEventListener("click",()=>{
+            document.images[2].src="akka.png";
+        });
+        img4.addEventListener("click",()=>{
+            document.images[3].src="queen.png";
+        });
+
+
+    </script>
+</body>
+</html>

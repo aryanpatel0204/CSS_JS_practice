@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td><input type="text" id="txt1" placeholder="Enter Text 1.."></td>
+            </tr>
+            <tr>
+                <td><input type="button" id="btnans" name="button" value="click me"></td>
+            </tr>
+            <tr>
+                <td><span id="spanans"></span></td>
+            </tr>
+            
+        </table>
+    </form>
+    <script>
+        let btn=document.querySelector("#btnans")
+
+        btn.addEventListener("click",()=>{
+            let i=document.querySelector("#txt1").value;
+
+            if(i==j){
+                document.querySelector("#spanans").innerHTML="Both the text are same."
+            }
+            else{
+                document.querySelector("#spanans").innerHTML="Both the text are not same."  
+            }
+        })
+    </script>
+</body>
+</html>

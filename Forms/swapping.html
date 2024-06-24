@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        A:<input type="text" id="txtnum1" placeholder="Enter Number for swapping."><br>
+        B:<input type="text" id="txtnum2" placeholder="Enter Number for swapping."><br>
+        <input type="button" onclick="swap()" id="btnans" value="Generate Answer"><br>
+        <input type="text" id="txtswap1" placeholder="Swapped Value of A.">
+        <input type="text" id="txtswap2" placeholder="Swapped Value Of B."><br>
+    </form>
+    <script>
+        function swap(){
+            let a=document.getElementById("txtnum1").value;
+            let b=document.getElementById("txtnum2").value;
+            let temp;
+
+            temp=a;
+            a=b;
+            b=temp;
+
+            document.getElementById("txtswap1").value= "Swapped Value Of A is= "+a;
+            document.getElementById("txtswap2").value= "Swapped Value Of B is= "+b;
+        }
+    </script>
+</body>
+</html>

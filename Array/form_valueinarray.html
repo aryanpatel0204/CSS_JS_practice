@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <form>
+            <input type="text" id="txtname" placeholder="Enter Name"><br>
+            <input type="text" id="txtnum" placeholder="Enter Number.."><br>
+            <input type="button" id="btnans" value="Click To Add"><br>
+            <span id="spanans"></span>
+        </form>       
+    </form>
+    <script>
+        let name=document.querySelector("#txtname").value;
+        let num=document.querySelector("#txtnum").value;
+        let span=document.querySelector("#spanans");
+        let btn=document.querySelector("#btnans");
+        data=[]
+
+        btn.addEventListener("click",()=>{
+            let obj = {
+                name: name,
+                num: num    
+            }
+            data.push(obj);
+            span.innerHTML=data;
+        })
+        
+            
+        //})
+    </script>
+</body>
+</html>

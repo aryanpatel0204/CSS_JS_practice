@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="button" value="Submit For TextBox" id="btnans"><br>
+        <span id="spanans"></span>
+        
+    </form>
+    <script>
+ 
+    
+    //drp1=document.querySelector("#drop2");
+    span=document.querySelector("#spanans");
+    btn=document.querySelector("#btnans");
+    let i=1;
+    btn.addEventListener("click",()=>{
+        var tb=document.createElement("input");
+        if(i%2==0){
+            tb.type = "text";
+            tb.name = "textboxes";
+            tb.value="hi" +i;
+            tb.style.backgroundColor="Green"
+            
+            i++;
+            // Add textbox to container 
+            span.appendChild(tb);
+        }
+        else{
+            tb.type = "text";
+            tb.name = "textboxes";
+            tb.value="hi" +i;
+            tb.style.backgroundColor="Red"
+            
+            i++;
+            // Add textbox to container 
+            span.appendChild(tb);
+        }
+
+    })
+    
+    </script>
+</body>
+</html>

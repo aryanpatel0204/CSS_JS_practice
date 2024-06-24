@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>Rate The Image..</title>
+</head>
+<body>
+    <div class="card-group">
+        <div class="card" id="crd1">
+            <img class="card-img-top" src="j1.png" height="350px" width="50px" alt="Card image cap">
+            <div class="card-body">
+                <form id="RateIt">
+                    <h5 class="card-title">Image 1</h5>
+                    <input type="radio" name="rad1" id="rad1">
+                    <input type="radio" name="rad1" id="rad2">
+                    <input type="radio" name="rad1" id="rad3">
+                    <input type="radio" name="rad1" id="rad4">
+                    <input type="radio" name="rad1" id="rad5"><br>
+                    <button type="submit" class="btn btn-info" >SUBMIT</button>
+                </form>
+            </div>
+        </div>
+        <div class="card" id="crd2">
+            <img class="card-img-top" src="s2.png" height="350px" width="50px" alt="Card image cap">
+            <div class="card-body">
+                <form id="RateIt1">
+                    <h5 class="card-title">Image 2</h5>
+                    <input type="radio" name="rad11" id="rad1">
+                    <input type="radio" name="rad12" id="rad2">
+                    <input type="radio" name="rad13" id="rad3">
+                    <input type="radio" name="rad14" id="rad4">
+                    <input type="radio" name="rad15" id="rad5"><br>
+                    <button type="submit" class="btn btn-info" >SUBMIT</button>
+                </form>
+                
+            </div>
+        </div>
+        <div class="card" id="crd3">
+            <img class="card-img-top" src="t1.png" height="350px" width="50px" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Image 3</h5>
+                <form id="RateIt2">
+                    <input type="radio" name="rad21" id="rad1">
+                    <input type="radio" name="rad22" id="rad2">
+                    <input type="radio" name="rad23" id="rad3">
+                    <input type="radio" name="rad24" id="rad4">
+                    <input type="radio" name="rad25" id="rad5"><br>
+                    <button type="submit" class="btn btn-info" >SUBMIT</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <table width="50%" border="1" rules="all" align="center">
+        <thead>
+            <tr>
+                <th>Rate Id</th>
+                <th>Rate Counts</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+<script>
+    function RateRadio(){
+        let rad1=document.querySelector("#rad1");
+        let rad2=document.querySelector("#rad2");
+        let rad3=document.querySelector("#rad3");
+        let rad4=document.querySelector("#rad4");
+        let rad5=document.querySelector("#rad5");
+        
+        let radCount=0;
+        if(rad1.checked) {
+            radCount += 1; 
+        }
+        if(rad2.checked) {
+            radCount += 2;
+        }
+        if(rad3.checked) {
+            radCount += 3;
+        }
+        if(rad4.checked) {
+            radCount += 4; 
+        }
+        if(rad5.checked) {
+            radCount += 5;
+        }
+        return radCount;
+    }
+    let form1=document.querySelector("#RateIt");
+    form1.addEventListener("submit",(event)=>{
+        let ratting=RateRadio();
+        let rateObj={ratting}
+
+        let rateData=JSON.parse(localStorage.getItem("RateUserData")) ?? []
+        rateData.push(rateObj);
+
+        localStorage.setItem("RateUserData",JSON.stringify(rateData))
+
+        event.target.reset();
+        RattingData();
+        event.preventDefault();
+    })
+    let body=document.querySelector("table tbody");
+    let RattingData=()=>{
+        let rateData=JSON.parse(localStorage.getItem("RateUserData")) ?? []
+        let rows='';
+        rateData.forEach((v,i)=>{
+            rows+=`
+                <tr>
+                    <td>${i+1}</td>
+                    <td>${v.ratting}</td>
+                </tr>
+            `
+        })
+        body.innerHTML=rows;
+    }
+    RattingData()
+</script>
+</html>

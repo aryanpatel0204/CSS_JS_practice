@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <span id="spanans"></span><br>
+        <span id="spanans1"></span><br>
+        <span id="spanans2"></span>
+
+    </form>
+    <script>
+        let d=new Date();
+        let h=d.getHours();
+        let m=d.getMinutes();
+        let s=d.getSeconds();
+        let dd=d.getDay();
+        let mm=d.getMonth();
+        let yy=d.getFullYear()
+
+
+        // function virus(){
+        //     alert("Hii Broo!!!")
+        // }
+        // setInterval(virus,3000);
+
+        
+
+        if(h<12){
+            document.querySelector("#spanans").innerHTML="Good Morning Time Is: "+h+":"+m+":"+s;
+        }
+        if(h>=12){
+            document.querySelector("#spanans").innerHTML="Good Afternoon Time Is: "+h+":"+m+":"+s;
+        }
+        if(h>=17){
+            document.querySelector("#spanans").innerHTML="Good Evening Time Is: "+h+":"+m+":"+s;
+        }
+        if(h>=22){
+            document.querySelector("#spanans").innerHTML="Good Night Time Is: "+h+":"+m+":"+s;
+        }
+
+        if(h<12){
+            document.querySelector("#spanans2").innerHTML=h+":"+m+" AM";
+        }
+        if(h>12){
+            document.querySelector("#spanans2").innerHTML=h+":"+m+" PM";
+
+        }
+        
+        document.querySelector("#spanans1").innerHTML=dd+"/"+mm+"/"+yy;
+
+
+    </script>
+</body>
+</html>

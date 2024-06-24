@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <table style="border: 5px;" rules="all">
+            <tr>
+                <td><input type="text" id="txtprincipal" placeholder="Enter Principal Amount"></td>
+                <td><input type="text" id="txtrate" placeholder="Enter Interest Rate"></td>
+                <td><input type="text" id="txttime" placeholder="Enter Given Time"></td>
+            </tr>
+            <tr>
+                <td><input type="button" id="btnans" value="Generate Answer"></td>
+                <td><span id="spanans"></span></td>
+            </tr>
+        </table>
+        
+    </form>
+    <script>
+        let btn=document.querySelector("#btnans");
+
+        btn.addEventListener("click",()=>{
+            let p=parseInt(document.querySelector("#txtprincipal").value);
+            let r=parseInt(document.querySelector("#txtrate").value);
+            let t=parseInt(document.querySelector("#txttime").value);
+
+            document.querySelector("#spanans").innerHTML= "Simple Interest= "+(p*r*t)/100;
+        })
+    </script>
+</body>
+</html>

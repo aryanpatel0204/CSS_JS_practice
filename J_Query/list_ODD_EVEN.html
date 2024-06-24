@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>LIST_CHANGE</title>
+</head>
+<body>
+    <ul>
+        <li>Ahmedabad</li>
+        <li>Surat</li>
+        <li>Baroda</li>
+        <li>Mumbai</li>
+        <li>Surat</li>
+        <li>Valsad</li>
+        <li>Pune</li>    
+    </ul>
+    <button>Click Me</button>
+</body>
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            $("li:even").css('color','green');
+            $("li:odd").css('color','red')
+        })
+    })
+</script>
+</html>
+<!-- QUESTION....
+->How can we write the text on the click event? -->

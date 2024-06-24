@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form align="center">
+        
+    </form>
+    <table width="50%" rules="all" border="1" align="center">
+        <thead>
+            <tr>
+                <th>Sr No.</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Gender</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+<script>
+    let signData=document.querySelector("table tbody");
+    let shpData=()=>{
+        let shpData1=JSON.parse(localStorage.getItem("shpCartData")) ?? []
+        let row="";
+        shpData1.forEach((v,i)=>{
+            row+=`
+                <tr>
+                    <td>${i+1}</td>
+                    <td>${v.name}</td>
+                    <td>${v.mail}</td>
+                    <td>${v.phone}</td>
+                    <td>${v.gender}</td>
+                    <td>${v.password}</td>
+                </tr>
+            `
+        })
+        signData.innerHTML=row;
+    }
+    shpData()
+</script>
+</html>
+<!--  -->

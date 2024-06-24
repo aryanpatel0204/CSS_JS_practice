@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>        
+        <span id="spantraffic"></span><br>
+        <span id="spanyel"></span><br>
+        <span id="spangre"></span>
+
+    </form>
+    <script>
+        
+        span=document.querySelector("#spantraffic");
+        k=1;
+        setInterval(trafficsignal,3000)
+
+        function trafficsignal(){
+            
+            if(k==1){
+                document.fgColor="Red";
+                span.innerHTML="<h2>RED</h2>";
+            }
+            if(k==2){
+                document.fgColor="Yellow";
+                span.innerHTML="<h2>YELLOW</h2>";
+            }
+            if(k==3){
+                document.fgColor="Green";
+                span.innerHTML="<h2>GREEN</h2>";
+                k=0;
+            }
+            k++;
+        }
+
+
+        //push shift unshift pop
+
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Resizing</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<style>
+    #box{
+        width:40%;
+        height:200px;
+        background:pink;
+        padding:10px;
+        border:1px solid #000;
+        overflow:auto;
+    }
+</style>
+<body>
+    <div id="box">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis eveniet nulla natus, harum cupiditate
+        recusandae laboriosam ipsam, impedit, qui laborum distinctio ea deserunt cum quos earum molestiae quidem dolorem
+        id ipsa odio? Dolor quisquam laborum libero dicta dolore officia perspiciatis alias?......
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $("#box").scroll(function(){
+            console.log("scrolling...")
+        })
+        $(window).resize(function(){
+            console.log("resizing...")
+        })
+    })
+</script>
+</html>

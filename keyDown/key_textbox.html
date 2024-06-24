@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Only lowerCase:<input type="text" name="lower" id="txtlow">
+    Only upperCase:<input type="text" name="upper" id="txtup">
+    Only Numbers:<input type="text" name="number" id="txtnum">
+    <span id="spanans"></span>
+    <script>
+        //span=document.querySelector("#spanans");
+        const txt1=document.querySelector("#txtlow");
+        const txt2=document.querySelector("#txtup");
+        const txt3=document.querySelector("#txtnum");
+        let validKey=true;
+        let low='';
+        let up='';
+        let num='';
+        document.addEventListener('keypress', function(event) {
+            let key = event.key;
+            if(key>="a" && key<='z'){
+                low+=key;
+            }
+            txt1.value=low;
+            //validKey=false;
+            if(key>="A" && key<="Z"){
+                up+=key;
+            }
+            txt2.value=up;
+            if(key>=0 && key<=9){
+                num+=key;
+            }
+            txt3.value=num;
+            
+        })
+    </script>
+</body>
+</html>

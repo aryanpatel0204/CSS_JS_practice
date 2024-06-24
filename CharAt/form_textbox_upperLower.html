@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <table>            
+            <input type="text" id="txtstr" placeholder="Enter String."><br>
+            <input type="text" id="txtstr1" placeholder="Lower Here....">
+            <input type="text" id="txtstr2" placeholder="Upper Here.....">
+        </table>
+    </form>
+    <script>
+        txt1=document.querySelector("#txtstr1");
+        txt2=document.querySelector("#txtstr2");
+        //let text1=txt.value;
+        let upper="";
+        let lower="";
+        txt=document.querySelector("#txtstr");
+        txt.addEventListener('keypress',function(event){
+            
+            let key=event.key;
+            if(key.toLowerCase()==key){
+                lower+=key; 
+            }
+            else if(key.toUpperCase()==key){
+                upper+=key; 
+                //alert("its upper") 
+                
+            }
+            txt1.value=lower;
+            txt2.value=upper;
+            
+            
+            //=lower;
+            //=upper;
+
+            
+            // 
+            // if(key>="a" && key<="z"){
+            //     lower+=key;  
+            // }
+            // txt.value=lower;
+            // if(key>="A" && key<="Z"){
+            //     upper+=key;
+            // }
+            // txt1.value=upper;
+        })
+    </script>
+</body>
+</html>

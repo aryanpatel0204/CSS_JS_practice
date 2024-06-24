@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="spanans"></span>
+    <script>
+        let span=document.querySelector("#spanans");
+        let user={
+            name:"ABC",
+            age:40,
+            gender:"male"
+        };
+        for(let key in user){
+            alert(key+": "+user[key])
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 5px;
+        padding: 5px;
+        font-family: sans-serif;
+    }
+    .MymainClass{
+       align-items: center;
+    }
+    .our_Product{
+        text-align: center;
+        font-weight: bold;
+        font-size: 50px;
+        margin-top: 5%;
+    }
+    .Filtercategory{
+        flex-basis: 30%;
+    }
+    .FilterList{
+        margin-top: 20px;
+        text-align: center;
+        font-size: 20px;
+    }
+    .Filtercategory h2{
+        margin-top: 50px;
+        text-align: center;
+    }
+    .FilterList label{
+        display: inline-block;
+        padding: 5px 0px;
+        text-align: center;
+    }
+    .Myproducts{
+        display: flex;
+        flex-basis: 75%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .ProductItems{
+        flex-basis: 31%;
+        margin-bottom: 20px;
+        box-shadow: 0px 0px 10px 2px #ccc;
+    }
+    .ProductItems img{
+        height: 350px;
+        width: 90%;
+        align-items: center;
+    }
+    .ProductItems p{
+        padding: 10px;
+        font-size: 30px;
+    }
+    .ProductItems h3{
+        padding: 10px;
+    }
+    .ProductItems h3{
+        font-size: 25px;
+    }
+    .ProductItems h4{
+        font-size: 25px;
+        border-bottom: 2px solid #ccc;
+    }
+</style>
+<body>
+    <div class="myCartShoping">
+        <div class="our_Product">Our Products</div>
+        <div class="MymainClass">
+            <div class="Filtercategory">
+                <h2>Category</h2>
+                <div class="FilterList">
+                    
+                </div>
+            </div>
+            <div class="Myproducts">
+                
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let displayPro=document.querySelector(".Myproducts");
+    let categoryList=document.querySelector(".FilterList");
+    let allCat=[];
+    let prodDis=(allCheckCategory)=>{
+        let product= fetch('https://fakestoreapi.com/products')
+        .then((response)=>{
+            return response.json();
+        })
+        .then((productData)=>{
+            
+            displayPro.innerHTML='';
+            
+            productData.forEach(element => {
+                // console.log(element)
+                if(!allCat.includes(element.category)){
+                    categoryList.innerHTML+=`
+                        <!-- FOR FILTER CATEGORY LIST --->
+                        <label>
+                            <input type="checkbox" onclick="FilterCheck()" value="${element.category}">${element.category}
+                        </label>
+                    `;
+                    allCat.push(element.category)
+                }
+                if(allCheckCategory.length==0){
+                    allCheckCategory=allCat;
+                    // If this productData array is blank then we will send allCat array in it.
+                }
+                if(allCheckCategory.includes(element.category)){
+                    displayPro.innerHTML+=`                   
+                        <!-- FOR DISPLAYING ITEMS --->
+                        <div class="ProductItems">
+                            <img src="${element.image}" alt="">
+                            <h4>${element.category}</h4>
+                            <p>${element.price}</p>
+                            <p>${element.title}</p>
+                            <h3>Ratings: <span>${element.rating.rate}</span></h4>
+                        </div>
+                    `
+                }
+            });
+        })
+        .catch((error)=>{
+            console.log("Error: We Got An Error!!",error)
+        })
+    }
+    prodDis()
+    let FilterCheck=()=>{
+        let checkInp=document.querySelectorAll("input[type='checkbox']");
+        let checkData=[];
+        checkInp.forEach(e => {
+            if(e.checked){
+                checkData.push(e.value)
+            }
+        });
+        prodDis(checkData)
+    }
+    /*
+    if(!allCat.includes(element.category))
+    If allCat dosen't includes the element that we wants then that element is allowed to let in.
+    */
+    /*
+    `
+                    <div class="ProductItems">
+                        <img src="lpBag.webp" alt="">
+                        <p>₹599</p>
+                        <h3>55 L Laptop Backpack Spacy unisex fits upto 16 Inches/college/school bag  (Black, Grey)</h3>
+                    </div>
+                `
+                Here in the above code we use backtick because we can use template literals
+    */
+</script>
+</html>
+<!-- You Can Use Thunder Client To See the data of the APIs. -->

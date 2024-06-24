@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .btn {
+        @apply text-blue-600 bg-red-600 py-2 px-1 text-sm rounded-xl
+    }
+}
+
+/* Here Layers means that the class which we have made will come after utilities but if you want to add it after components then you can write @layers components */

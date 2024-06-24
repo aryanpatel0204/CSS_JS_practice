@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table width="100%" border="1" rules="all">
+        
+        <tbody>
+            <tr>
+
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        //how to get a query string value in javascript??
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+        let tbody=document.querySelector("table tbody tr");
+        let productData=()=>{
+            let proData=JSON.parse(localStorage.getItem("prouserdata")) ?? []
+            let rows='';
+            proData.forEach((v,i)=>{
+                if(id==v.catId){
+                    rows+=`<td>${v.name}<br> <a href="my_product.html?id=${i+1}"><img src="${v.image}" height='150px' width=120px></a> <br><b>${v.price}</b></td>`
+                }
+            })
+            tbody.innerHTML=rows
+        }
+        productData()
+    </script>
+</body>
+</html>

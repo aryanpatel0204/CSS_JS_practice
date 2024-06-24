@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    const PromiseOne= new Promise(function(resolve,reject){
+        //Do an async task
+        //Database Call, cryptography, network
+        setTimeout(function(){
+            console.log("Task Completed Successfully!!?")
+            resolve()
+        },2000)
+    })
+//If you want to connect .then and the promise then you have write resolve()
+    PromiseOne.then(function(){
+        console.log("Promise consumed")
+    })
+</script>
+<body>
+    
+</body>
+</html>

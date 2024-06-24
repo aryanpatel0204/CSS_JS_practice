@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <table style="border: 5px;" rules="all">
+            <tr>
+                <td><input type="number" id="txtevenodd" placeholder="Enter Number"></td>
+                <td><input type="button" id="btnans" value="Generate Answer"></td>
+            </tr>
+            <tr>
+                <td><span id="spanans"></span></td>
+            </tr>
+        </table>        
+    </form>
+    <script>
+        
+        let btn=document.querySelector("#btnans");
+
+        btn.addEventListener("click",()=>{
+            let a=parseInt(document.querySelector("#txtevenodd").value);
+            if(a%2==0){
+                document.querySelector("#spanans").innerHTML=a+" Is Even.";
+            }
+            else{
+                document.querySelector("#spanans").innerHTML=a+ " Is Odd.";
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <span id="spanans1"></span><br>
+        <input type="text" id="txt1" placeholder="Enter Number">
+        <input type="button" id="btnans" value="Check Greater">
+        <span id="spanans"></span><br>
+    </form>
+    <script>
+        let a=[39, 24, 44, 28, 36, 29, 38, 37, 25, 34, 23, 30, 42, 22, 33, 43, 35, 40, 26, 32, 41, 27, 45, 31, 46, 48, 47, 49, 21, 50];
+        document.querySelector("#spanans1").innerHTML="Original array: "+a;
+        let btn=document.querySelector("#btnans");
+        let span=document.querySelector("#spanans");
+
+
+       
+        
+        
+        btn.addEventListener("click",()=>{
+            let txt=document.querySelector("#txt1").value;
+            let d=a.filter(arr=>arr>txt);
+            span.innerHTML="Array Greater Than: "+txt +": "+d;
+            
+        })
+            
+        //})
+    </script>
+</body>
+</html>

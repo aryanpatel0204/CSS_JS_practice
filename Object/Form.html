@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="formdata" style="border: black; border-width: 2px;" align="center">
+        <h1>Form</h1>
+        <label><b>Username:</b></label><br>
+        <input type="text" placeholder="Enter Name.." name="name" id="txtName"><br>
+        <label><b>Age:</b></label><br>
+        <input type="number" name="age" id="txtage" placeholder="Enter Age.."><br>
+        <label><b>Your Work(Position):</b></label><br>
+        <input type="text" name="work" id="txtwork" placeholder="Enter Position.."><br>
+        <input type="button" id="btnclick" value="Click Here"><br>
+    </form>
+<h1>Data:</h1>
+<span id="spanans"></span>
+<script>
+    txt=document.querySelector("#txtName");
+    txt1=document.querySelector("#txtage");
+    txt2=document.querySelector("#txtwork");
+    btn=document.querySelector("#btnclick");
+    span=document.querySelector("#spanans");
+    
+    arr=[];
+    btn.addEventListener("click",()=>{
+        txtname=txt.value;
+        txtage=txt1.value;
+        txtwork=txt2.value;
+        output="<table border=2px rules=all id=tabledata> <tr><td><b>Name</b></td><td><b>Age</b></td><td><b>Work</b></td></tr>"
+        
+        let obj={
+            name:txtname,
+            age:txtage,
+            work:txtwork
+        };
+
+        arr.push(obj);
+
+        for(i=0;i<arr.length;i++){
+            output+="<tr><td>"+arr[i].name+"</td>"+"<td>"+arr[i].age+"</td>"+"<td>"+arr[i].work+"</td><td><a href=# id=tdrow onclick=deleteData("+i+")>Delete</a></td><td><a href=# id=tdedit onclick=edit("+i+")>Edit</a></td></tr>";
+        }
+        span.innerHTML=output+"</table>";
+        txt.value="";
+        txt1.value="";
+        txt2.value="";
+    });
+
+    function deleteData(index){
+        arr.splice(index,1);
+        updateTable();
+    }
+    function edit(index){
+        let editName=prompt("Enter Name..");
+        let editAge=prompt("Enter Age..");
+        let editWork=prompt("Enter Work..")
+
+        arr[index].name=editName;
+        arr[index].age=editAge;
+        arr[index].work=editWork;
+        updateTable()
+    }
+
+    function updateTable(){
+        let table=document.querySelector("#tabledata");
+        table.innerHTML="<tr><td><b>Name</b></td><td><b>Age</b></td><td><b>Work</b></td></tr>";
+        for(i=0;i<arr.length;i++){
+            table.innerHTML+="<tr><td>"+arr[i].name+"</td>"+"<td>"+arr[i].age+"</td>"+"<td>"+arr[i].work+"</td><td><a href=# id=tdrow onclick=deleteData("+i+")>Delete</a></td><td><a href=# id=tdedit onclick=edit("+i+")>Edit</a></td></tr>";
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!--;-->
+
+
+<body>
+    
+    <img src="image5.png" id="imgcard1" height="250px" width="200px">
+    <img src="image6.png" id="imgcard2" height="250px" width="200px">
+    <img src="image7.png" id="imgcard3" height="250px" width="200px">
+    <img src="image8.png" id="imgcard4" height="250px" width="200px">
+    <img src="image9.png" id="imgcard5" height="250px" width="200px">
+    <img src="image10.png" id="imgcard6" height="250px" width="200px">
+    <img src="image11.png" id="imgcard7" height="250px" width="200px">
+    <img src="image12.png" id="imgcard8" height="250px" width="200px">
+    <img src="image13.png" id="imgcard9" height="250px" width="200px">
+    <img src="image14.png" id="imgcard10" height="250px" width="200px">
+    <img src="image15.png" id="imgcard11" height="250px" width="200px">
+    <img src="image15.png" id="imgcard12" height="250px" width="200px"><br>
+    <input type="button" id="btncheck" value="Check" style="height: 60px; width: 100px; font-size: x-large; background-color: aqua;">
+    <span id="spanans"></span>
+
+    
+    <script>
+        img1=document.querySelector("#imgcard1");
+        img2=document.querySelector("#imgcard2");
+        img3=document.querySelector("#imgcard3");
+        img4=document.querySelector("#imgcard4");
+        img5=document.querySelector("#imgcard5");
+        img6=document.querySelector("#imgcard6");
+        img7=document.querySelector("#imgcard7");
+        img8=document.querySelector("#imgcard8");
+        img9=document.querySelector("#imgcard9");
+        img10=document.querySelector("#imgcard10");
+        img11=document.querySelector("#imgcard11");
+        img12=document.querySelector("#imgcard12");
+        btn=document.querySelector("#btncheck");
+        span=document.querySelector("#spanans");
+
+
+        btn.addEventListener("click",()=>{
+            if(img1.src==img8.src){
+                img1.disabled=true;
+                img8.disabled=true;
+                alert("Same!!??")
+            }
+            else{
+                if(img1.src!=img8.src){
+                    
+                }
+            }
+            if(img2.src==img10.src){
+                alert("Same!!??")
+            }
+            if(img3.src==img5.src){
+                alert("Same!!??")
+            }
+            if(img4.src==img6.src){
+                alert("Same!!??")
+            }
+            if(img7.src==img12.src){
+                alert("Same!!??")
+            }
+            if(img9.src==img11.src){
+                alert("Same!!??")
+            }
+
+        })
+        
+
+        img1.addEventListener("click",()=>{
+            document.images[0].src="7clubs.png";
+        });
+        img2.addEventListener("click",()=>{
+            document.images[1].src="king.png";
+        });
+        img3.addEventListener("click",()=>{
+            document.images[2].src="akka.png";
+        });
+        img4.addEventListener("click",()=>{
+            document.images[3].src="queen.png";
+        });
+        img5.addEventListener("click",()=>{
+            document.images[4].src="akka.png";
+        });
+        img6.addEventListener("click",()=>{
+            document.images[5].src="queen.png";
+        });
+        img7.addEventListener("click",()=>{
+            document.images[6].src="joker.png";
+        });
+        img8.addEventListener("click",()=>{
+            document.images[7].src="7clubs.png";
+        });
+        img9.addEventListener("click",()=>{
+            document.images[8].src="falliA.png";
+        });
+        img10.addEventListener("click",()=>{
+            document.images[9].src="king.png";
+        });
+        img11.addEventListener("click",()=>{
+            document.images[10].src="falliA.png";
+        });
+        img12.addEventListener("click",()=>{
+            document.images[11].src="joker.png";
+        });
+        
+
+        // btn.addEventListener("click",()=>{
+        //     if(canClick==true){
+        //         if(a==a){
+        //             btn.disable=true;
+        //             alert("Both Are Same!")
+        //             //span.innerHTML="<h1>Both are same!!</h1>"
+        //         }
+                
+        //         if(b==b){
+        //             btn.disable=true;
+        //             span.innerHTML="<h1>Both are same!!</h1>"
+        //         }
+        //         if(c==c){
+        //             btn.disable=true;
+        //             span.innerHTML="<h1>Both are same!!</h1>"
+        //         }
+        //         if(d==d){
+        //             btn.disable=true;
+        //             span.innerHTML="<h1>Both are same!!</h1>"
+        //         }
+        //         if(e==e){
+        //             btn.disable=true;
+        //             span.innerHTML="<h1>Both are same!!</h1>"
+        //         }
+        //         if(f==f){
+        //             btn.disable=true;
+        //             span.innerHTML="<h1>Both are same!!</h1>"
+        //         }
+
+        //     }
+            
+
+        // })
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txtname" placeholder="Enter Name">
+    <input type="text" id="txtage" placeholder="Enter Age">
+    <input type="text" id="txtwork" placeholder="Enter Your Work(Position)"><br>
+    <input type="button" id="btnclick" value="Click Me"><br>
+    <span id="spanans"></span><br>
+    
+    
+    <script>
+        txt=document.querySelector("#txtname");
+        txt1=document.querySelector("#txtage");
+        txt2=document.querySelector("#txtwork");
+        btn=document.querySelector("#btnclick");
+        span=document.querySelector("#spanans");
+        
+        arr=[];
+        btn.addEventListener("click",()=>{
+            txtname=txt.value;
+            txtage=txt1.value;
+            txtwork=txt2.value;
+            output="<table border=2px rules=all id=tabledata> <tr><td><b>Name<b></td><td><b>Age</b></td><td><b>Work</b></td>";
+
+            let obj={
+                name:txtname,
+                age:txtage,
+                work:txtwork
+            };
+
+
+            arr.push(obj)
+            
+            for(i=0;i<arr.length;i++){
+                output+="<tr><td>"+arr[i].name+"</td>"+"<td>"+arr[i].age+"</td>"+"<td>"+arr[i].work+"</td><td><a href=# id=tdrow onclick=remove("+i+")>Delete</a></td><td><a href=# id=tdedit onclick=update("+i+")>Edit</a></td></tr>";
+                
+                //document.write(arr.length)
+            }
+            span.innerHTML=output+"</table>";
+            txt.value="";
+            txt1.value="";
+            txt2.value=""
+        });
+        function update(index){
+            let editName=prompt("Edit Name..");
+            let editAge=prompt("Edit Age..");
+            let editWork=prompt("Edit Work..");
+
+            arr[index].name=editName;
+            arr[index].age=editAge;
+            arr[index].work=editWork;
+            updateTable()
+        }
+        function remove(index){
+            arr.splice(index,1);
+            updateTable()
+            //table=document.querySelector("#tdrow").deleteRow(0)
+        }
+        function updateTable(){
+            let table=document.querySelector("#tabledata");
+            table.innerHTML="<tr><td><b>Name<b></td><td><b>Age</b></td><td><b>Work</b></td>";
+            for(i=0;i<arr.length;i++){
+                table.innerHTML+="<tr><td>"+arr[i].name+"</td>"+"<td>"+arr[i].age+"</td>"+"<td>"+arr[i].work+"</td><td><a href=# id=tdrow onclick=remove("+i+")>Delete</a></td><td><a href=# id=tdedit onclick=update("+i+")>Edit</a></td></tr>";
+            }
+        }
+        
+    </script>
+</body>
+</html>

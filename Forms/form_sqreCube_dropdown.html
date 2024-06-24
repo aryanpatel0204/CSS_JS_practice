@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td><input type="text" id="txt1" placeholder="Enter Number 1"></td>
+            </tr>
+            <tr>
+                <td><label>Maths Options:</label>
+                    <select name="maths" id="drop1">
+                        <option>-----Select---</option>
+                        <option value="square">Square</option>
+                        <option value="cube">Cube</option>
+                    </select>
+                </td>
+            </tr>
+            <!--<tr>
+                <td><input type="button" id="btnans" value="Submit Here"></td>
+            </tr>-->
+            <tr>
+                <td><span id="spanans"></span></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+ 
+    
+    txt1=document.querySelector("#txt1");
+    span=document.querySelector("#spanans");
+    drp=document.querySelector("#drop1");
+    //btn=document.querySelector("#btnans");
+
+    drp.addEventListener("click",()=>{
+        let a = txt1.value;
+        if(a == ""){
+            alert("ENter Value....")
+        }
+        else
+        {
+            a1=parseFloat(a);
+            let d=drp.value;        
+            if(d=="square"){
+                span.innerHTML="Square Is= "+a1*a1;
+            }
+            if(d=="cube"){
+                span.innerHTML="Cube Is= "+a1*a1*a1;
+            }
+
+        }
+
+    })
+    
+    
+    </script>
+</body>
+</html>

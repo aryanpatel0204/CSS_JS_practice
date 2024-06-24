@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>        
+        <ul>
+            <li>Apple</li>
+            <li>Banana</li>
+            <li>Orange</li>
+            <li>Mango</li>
+            <li>Strawberry</li>
+        </ul>
+        <input type="button" value="BLUE" id="btnans">
+        <ul>
+            <li>Pineapple</li>
+            <li>Blueberry</li>
+            <li>Muskmelon</li>
+            <li>Coconut</li>
+            <li>Guava</li>
+        </ul><br>
+        <input type="button" value="RED" id="btnans1">
+    </form>
+    <script>
+        b1=document.querySelector("#btnans");
+        b2=document.querySelector("#btnans1")
+        
+
+        b1.addEventListener("click",()=>{
+            li1=document.getElementsByTagName("ul")[0]
+            li1.style.color="blue"
+        });
+        b2.addEventListener("click",()=>{
+            li2=document.getElementsByTagName("ul")[1]
+            li2.style.color="red"
+        });
+
+
+        //push shift unshift pop
+
+       
+    </script>
+</body>
+</html>

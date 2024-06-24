@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form align="center">
+        <h1>Login Page</h1>
+        <label><b>Username:</b></label><br>
+        <input type="text" name="uname" id="txtname" placeholder="Enter Name.."><br>
+        <label><b>Password:</b></label><br>
+        <input type="password" name="pass" id="txtpass" placeholder="Enter Password.."><br>
+        <p><a href="#">Forgot password??</a></p><br>
+        <button>LOGIN</button>
+    </form><br>
+    <table width="100%" border="1" rules="all">
+        <thead>
+            <tr>
+                <th>Sr No.</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Gender</th>
+                <th>Password</th>
+                <th>Delete</th>
+                <th>Update</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        let form=document.querySelector("form");
+        form.addEventListener("submit",(event)=>{
+            let name=event.target.uname.value;
+            let password=event.target.pass.value;
+            let logobj={name:name,password:password}
+
+            let oldData=JSON.parse(localStorage.getItem("userrdata")) ?? []
+            let checkData=oldData.filter((v,i)=>{
+                if(v.name==name && v.password==password){
+                    alert("Welcome")
+                }
+            
+            })
+
+            event.target.reset();
+            getData();
+            event.preventDefault();
+        })
+
+        let tbody=document.querySelector("table tbody")
+        let getData=()=>{
+            let oldData=JSON.parse(localStorage.getItem("userrdata")) ?? []
+            let rows=''
+            oldData.forEach((v,i)=>{
+                rows+=`
+                        <tr>
+                            <td>${i+1}</td>
+                            <td>${v.name}</td>
+                            <td>${v.email}</td>
+                            <td>${v.phone}</td>
+                            <td>${v.gender}</td>
+                            <td>${v.password}</td>
+                            <td>
+                                <button>Delete</button>    
+                            </td>
+                            <td>
+                                <button>Edit</button>
+                            </td>
+                `
+            })
+            tbody.innerHTML=rows;
+        }
+        getData()
+    </script>
+</body>
+</html>

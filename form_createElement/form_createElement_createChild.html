@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <table>
+            
+            <tr>
+                <span type="text" id="parent"></span>
+            </tr>
+            
+            <tr>
+                <div id="div1"></div>
+            </tr>
+        </table>
+    </form>
+    <script>
+        const div = document.createElement("div"); // Creates a new <div> element
+        const div1 = document.createElement("div1"); // Create new element
+
+        const parent = document.querySelector("parent"); // Get parent node
+        parent.appendChild(div1);
+
+    
+    </script>
+</body>
+</html>

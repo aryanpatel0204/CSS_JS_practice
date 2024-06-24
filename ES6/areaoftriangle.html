@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <table style="border: 5px;" rules="all">
+            <tr>
+                <td><input type="text" id="txtheight" placeholder="Height"></td>
+                <td><input type="text" id="txtbase" placeholder="Base"></td>
+            </tr>
+            <tr>
+                <td><input type="button" id="btnans" name="button" value="click me"></td>
+            </tr>
+            <tr>
+                <td><span id="spanans"></span></td>
+            </tr>
+            
+        </table>
+    </form>
+    <script>
+        
+        let btn=document.querySelector("#btnans");
+      
+
+        btn.addEventListener("click",()=>{
+            let h=parseInt(document.querySelector("#txtheight").value);
+            let b=parseInt(document.querySelector("#txtbase").value);
+            
+            document.querySelector("#spanans").innerHTML=h*b*0.5;
+        })
+    </script>
+</body>
+</html>

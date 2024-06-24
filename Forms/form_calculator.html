@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td><input type="text" id="txt1" placeholder="Enter Number 1"></td>
+                <td><input type="text" id="txt2" placeholder="Enter Number 2"></td>
+            </tr>
+            <tr>
+                <td><input type="radio" value="Square" id="radadd" name="op">Addition</td>
+                <td><input type="radio" value="Square" id="radsub" name="op">Subtraction</td>
+                <td><input type="radio" value="Square" id="radmul" name="op">Multiplication</td>
+                <td><input type="radio" value="Square" id="raddiv" name="op">Division</td>
+
+            </tr>
+            <tr>
+                <td><span id="spanans"></span></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+
+    add=document.querySelector("#radadd");
+    sub=document.querySelector("#radsub");
+    mul=document.querySelector("#radmul");
+    div=document.querySelector("#raddiv");
+    txt1=document.querySelector("#txt1");
+    txt2=document.querySelector("#txt2");
+    span=document.querySelector("#spanans");
+
+    add.addEventListener("click",()=>{
+        let a=parseFloat(txt1.value);
+        let b=parseFloat(txt2.value)
+        span.innerHTML="Addition Of "+a+" And "+b+" Is= "+(a+b);
+    })
+    sub.addEventListener("click",()=>{
+        let a=parseFloat(txt1.value);
+        let b=parseFloat(txt2.value)
+        span.innerHTML="Subtraction Of "+a+" And "+b+" Is= "+(a-b);
+    })
+    mul.addEventListener("click",()=>{
+        let a=parseFloat(txt1.value);
+        let b=parseFloat(txt2.value)
+        span.innerHTML="Multiplication Of "+a+" And "+b+" Is= "+(a*b);
+    })
+    div.addEventListener("click",()=>{
+        let a=parseFloat(txt1.value);
+        let b=parseFloat(txt2.value)
+        span.innerHTML="Division Of "+a+" And "+b+" Is= "+(a/b);
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!--;-->
+
+
+<body>
+    
+    <img src="india.png" id="imgindia" height="200px" width="300px">
+    <img src="uae.png" id="imguae" height="200px" width="300px">
+    <img src="us.png" id="imgus" height="200px" width="300px">
+    <img src="nz.png" id="imgnz" height="200px" width="300px"><br>
+    <span id="spanans"></span>
+    <script>
+        img1=document.querySelector("#imgindia");
+        img2=document.querySelector("#imguae");
+        img3=document.querySelector("#imgus");
+        img4=document.querySelector("#imgnz");
+        span=document.querySelector("#spanans");
+        img1.addEventListener("click",()=>{
+            span.innerHTML="<h2>Capital Of India Is New Delhi</h2>"
+        });
+        img2.addEventListener("click",()=>{
+            span.innerHTML="<h2>Capital Of UAE Is Abu Dhabi</h2>"
+        });
+        img3.addEventListener("click",()=>{
+            span.innerHTML="<h2>Capital Of US Is Washington, D.C.</h2>"
+        });
+        img4.addEventListener("click",()=>{
+            span.innerHTML="<h2>Capital Of New Zealand Is Wellington.</h2>"
+        });
+
+
+    </script>
+</body>
+</html>

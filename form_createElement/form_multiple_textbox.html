@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <table>
+            
+            <tr>
+                <td><input type="button" value="Submit For TextBox" id="btnans"></td>
+            </tr>
+            
+            <tr>
+                <div id="div1"></div>
+            </tr>
+        </table>
+    </form>
+    <script>
+ 
+    
+    //drp1=document.querySelector("#drop2");
+    di=document.querySelector("#div1");
+    btn=document.querySelector("#btnans");
+    let i=1;
+    btn.addEventListener("click",()=>{
+        var tb=document.createElement("input");
+
+        tb.type = "text";
+        tb.name = "textboxes";
+        tb.value="hi" +i;
+        
+        i++;
+        // Add textbox to container 
+        di.appendChild(tb);
+
+    })
+    
+    </script>
+</body>
+</html>

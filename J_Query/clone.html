@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clone</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div id="box">
+        <h2>Heyyyy Appendto</h2>
+    </div>
+    <input type="button" class="btn btn-default" id="btnAdd" value="AddNewItem">
+    <div id="box2">
+
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $("#btnAdd").click(function(){
+            $("#box h2").clone().prependTo("#box2").html("<h1>This Is Prependto</h1>")
+            $("#box h2").clone().appendTo("#box2")
+        })
+    })
+</script>
+</html>

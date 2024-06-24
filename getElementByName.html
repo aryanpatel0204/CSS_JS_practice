@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input name="age" placeholder="Enter Age...">
+        <input name="name" placeholder="Enter Name..."> 
+    </form>
+    <script>
+        // get element with name="age" 
+        const ageInput = document.getElementsByName("age")[0];
+
+        // get element with name="name"
+        const nameInput = document.getElementsByName("name")[0];
+
+        console.log(ageInput.value); // prints 30 
+        console.log(nameInput.value); // prints John
+    </script>
+</body>
+</html>

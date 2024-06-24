@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+<body>
+    <img src="merc.jpg" height="250px" width="300px"><br>
+    <input type="button" id="btn1" value="Click 1">
+    <input type="button" id="btn2" value="Click 2">
+
+    <script>
+        btn=document.querySelector("#btn1");
+        btn1=document.querySelector("#btn2");
+        btn.addEventListener("click",()=>{
+            document.images[0].src="kola.jpg";
+        });
+        btn1.addEventListener("click",()=>{
+            document.images[0].src="images.png";
+        })
+
+    </script>
+</body>
+</html>

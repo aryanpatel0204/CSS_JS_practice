@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <table style="border: 5px;" rules="all">
+            <tr>
+                <td><input type="text" id="txtradius" placeholder="Enter Radius"></td>
+                <td><input type="button" onclick="areaofcircle()" id="btnans" value="Answer"></td>
+            </tr>
+            <tr>
+                <td><span id="spanans"></span></td>
+            </tr>
+        </table>
+        
+    </form>
+    <script>
+        function areaofcircle(){
+            let pi=3.14
+            let r=document.getElementById("txtradius").value;
+            let str="Area Of Circle= ";
+            document.getElementById("spanans").innerText=str+pi*r*r;
+        }
+    </script>
+</body>
+</html>
